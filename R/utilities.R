@@ -1,3 +1,26 @@
+#' Create methods node from .md file
+#'
+#' @param f (character) Full path to methods.md file
+#'
+#' @return (list) EML methodStep node for markdown as supported by the Environmental Data Initiative Data Repository
+#'
+set_methods_md <- function(f) {
+  txt <- readr::read_file(f)
+  res <- list(
+    methodStep = list(
+      description = list(
+        markdown = txt)))
+  return(res)
+}
+
+
+
+
+
+
+
+
+
 #' Write template to file
 #'
 #' @param tmplt (data.frame) Template
